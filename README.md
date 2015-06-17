@@ -10,6 +10,16 @@ Run this command:
 
     npm install express-react-views react --save
 
+and add this to your app to load the library:
+
+```jsx
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
+```
+
+See https://github.com/reactjs/express-react-views#add-it-to-your-app for more info
+
 ## 2. Create a layout
 
 First create a directory to hold the layout by running this command:
