@@ -64,9 +64,9 @@ var HelloMessage = React.createClass({
     );
   }
 });
-```
 
 module.exports = HelloMessage;
+```
 
 ## 4. Update the tweets route
 
@@ -115,7 +115,18 @@ Next install the twitter library:
 
 Then follow the instructions on setting it up: https://www.npmjs.com/package/twitter
 
-By adding this to your app:
+By adding this to your app below the requires but above the routes:
+
+```jsx
+var Twitter = require('twitter');
+
+var twitter = new Twitter({
+  consumer_key: process.env.TWITTER_CONSUMER_KEY,
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+});
+```
 
 ## 7. Get some data
 
