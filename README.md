@@ -1,10 +1,16 @@
-# 1. Add express react
+# BEWD Spring 2015 Class 9 Lab
+
+Use the previous class's homework as the starting point:
+
+https://github.com/pjb3/bewd-class-8-homework
+
+## 1. Add express react
 
 Run this command:
 
     npm install express-react-views react --save
 
-# 2. Create a layout
+## 2. Create a layout
 
 First create a directory to hold the layout by running this command:
 
@@ -29,9 +35,9 @@ var DefaultLayout = React.createClass({
 module.exports = DefaultLayout;
 ```
 
-See https://github.com/reactjs/express-react-views#layouts for more details
+See https://github.com/reactjs/express-react-views##layouts for more details
 
-# 3. Create a view
+## 3. Create a view
 
 Create a file `views/tweets.jsx` with the following contents:
 
@@ -52,7 +58,7 @@ var HelloMessage = React.createClass({
 
 module.exports = HelloMessage;
 
-# 4. Update the tweets route
+## 4. Update the tweets route
 
 ```js
 app.get('/tweets', function (req, res) {
@@ -64,7 +70,7 @@ Restart the app and view http://localhost:8000/tweets
 
 You should see the message rendered via react
 
-# 5. Setup dotenv
+## 5. Setup dotenv
 
 It is good security practice to store sensitive information like access key, passwords, etc. in a separate environment file. `dotenv` is a library that makes it easy to do that. Install the library:
 
@@ -82,7 +88,7 @@ See https://www.npmjs.com/package/dotenv for more info
 
 **Make sure to add `.env` to your `.gitignore` file so you don't accidentally commit sensitive information**
 
-# 6. Configure the twitter client
+## 6. Configure the twitter client
 
 You need a Twitter account that is verified by your mobile phone number to create a a Twitter app. Once you have that, go to http://apps.twitter.com to create an app. Once you have an app, generate an access token and put it into your `.env` file:
 
@@ -101,7 +107,7 @@ Then follow the instructions on setting it up: https://www.npmjs.com/package/twi
 
 By adding this to your app:
 
-# 7. Get some data
+## 7. Get some data
 
 Temporarily change the tweets route to look like this:
 
@@ -117,7 +123,7 @@ app.get('/tweets', function (req, res) {
 
 This will make a search request to twitter and just return the response as JSON. You can view it in your browser at http://localhost:8000/tweets to see how the response data is structured.
 
-# 8. Use the data
+## 8. Use the data
 
 From the previous request, you can see that there is a top-level key called `statuses` which is an array of objects, each one representing a tweet. There is a lot of date in each tweet, but we are going to use these parts:
 
@@ -172,7 +178,7 @@ var TweetList = React.createClass({
 module.exports = TweetList;
 ```
 
-# In-Class / Homework assignments
+## In-Class / Homework assignments
 
 - Include other elements on the page like user name and profile image
 - Use moment js to format the time in relative time (5 minutes ago)
