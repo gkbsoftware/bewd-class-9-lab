@@ -1,4 +1,5 @@
 var React = require('react');
+var moment = require('moment');
 var DefaultLayout = require('./layouts/default');
 
 var Tweet = React.createClass({
@@ -15,8 +16,8 @@ var Tweet = React.createClass({
           </div>
 
           <div className="col-md-10">
-            <b>@{this.props.user.screen_name + " - "}</b>
-            <em>{this.props.created_at}</em>
+            <b>@{this.props.user.screen_name + " "}</b>
+            <em>{moment(this.props.created_at.substr(4)).fromNow() + " - "}</em>
             {this.props.text}
           </div>
 
